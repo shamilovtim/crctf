@@ -1,0 +1,55 @@
+/-------------\
+Getting Started
+\-------------/
+
+1. 	Create a subdirectory in your Quake directory called 'crctf' or whatever
+   	else you feel like calling it.
+
+2. 	Unzip the contents of crctf3.zip into this new subdirectory.  Make sure that
+   	whatever program you use to unzip the files preserves the directory structure
+   	contained in crctf3.zip.
+
+3. 	Edit autoexec.cfg, crctf.cfg, and levels.cfg.  Each of these files is
+	commented with editing instructions.  Make sure you
+   	change the passwords!  *Don't* give out password 0!!!
+
+4.	Start up your quake server with '-game crctf' in the command line replacing
+   	'crctf' with whatever name you gave your subdirectory.
+
+Examples:
+
+  wqpro.exe -condebug -game crctf -dedicated +hostname jurassic
+  sqpro -condebug -game crctf -dedicated 16 +hostname essentrix
+
+	The recommended quake executable for running a crctf server is ProQuake
+	(http://quakeone.com/proquake).  It is also recommended that you use
+	-condebug in the command line.  This will create a console log called
+	Qconsole.log in your crctf directory.  It is useful for seeing what has
+	happened on your server, and it can also help the debugging process if you
+	encounter problems running crctf.  This file can also be given a different
+	name, or even named sequentially so that successive runs of the quake
+	executable don't overwrite previous log files (see the ProQuake manual
+	for details).
+
+0.1 Recommended Settings
+
+The following settings are recommended for MATCH play:
+
+	-zone 512 -condebug -dedicated 12 -deathmatch 1 +pausable 0 +noexit 1
+	+samelevel 2 +teamplay 1 +sv_aim 2 +timelimit 20 +fraglimit 100
+
+	zone 512 and condebug were explained above.  dedicated 12 allows for a
+	reasonable number of players.  The maximum allowed by Quake is 16; this is
+	almost always too many.  Most good servers set the limit to 10 or 12.
+	deathmatch 1 is pretty standard and self-explanatory.  pausable 0 prevents
+	players from pausing the game, which can be badly abused.  noexit 1 prevents
+	a rapid progression through levels when there's always one person who doesn't
+	like such and such a level.  sv_aim 2 allows players to shoot where they aim -
+	it removes the vertical correction that is annoying to all experienced quake
+	players.  timelimit and fraglimit are of course more subjective.. I have found
+	30, 50 to be quite reasonable.  Note the *absence* of teamplay 1; all serious
+	quake servers use teamplay 0 to prevent really cheap tactics with grenades,
+	rocket launchers and lightening gun discharges.
+
+	If the server is to be run in match mode, then -dedicated 16 is recommended
+	to allow for the maximum number of observers, and teamplay should be set to 2.
